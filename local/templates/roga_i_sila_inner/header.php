@@ -56,6 +56,7 @@ Asset::getInstance()->addJs(SCRIPTS_AND_STYLES_PATH . "/js/jquery.ui.selectmenu/
 										"AUTH_INDEX" => "/auth/",
 										"PERSONAL" => "/personal/",
 										"LOGOUT" => $APPLICATION->GetCurPage() . "?logout=yes",
+										'AUTH_REGISTER' => '/auth/?register=yes',
 						)
 					);?>
 					
@@ -69,80 +70,74 @@ Asset::getInstance()->addJs(SCRIPTS_AND_STYLES_PATH . "/js/jquery.ui.selectmenu/
 				<div class="width_960">
 							<?if($curPage != "/404.php"):?> 
 								<?$APPLICATION->IncludeComponent(
-									"bitrix:search.form", 
-									"search_form_header", 
-									array(
-										"PAGE" => "#SITE_DIR#search/index.php",
-										"USE_SUGGEST" => "N",
-										"COMPONENT_TEMPLATE" => "search_form_header"
-									),
-									false
+										"bitrix:search.form", 
+										"search_form_header", 
+										array(
+												"PAGE" => "#SITE_DIR#search/index.php",
+												"USE_SUGGEST" => "N",
+												"COMPONENT_TEMPLATE" => "search_form_header"
+											),
+										false
 								);?>
 							<?endif;?> 
 					
-					<nav class="main_menu">
-						<ul>
-							<li class="submenu pie">
-								<span>Легковые</span>
-								<div class="submenu_border"></div>
-								<ul>
-									<li><a href="#">Седаны</a></li>
-									<li><a href="#">Хетчбеки</a></li>
-									<li><a href="#">Универсалы</a></li>
-									<li><a href="#">Купе</a></li>
-									<li><a href="#">Родстеры</a></li>
-								</ul>
-							</li>
-							<li class="submenu pie">
-								<span>Внедорожники</span>
-								<div class="submenu_border"></div>
-								<ul>
-									<li><a href="#">Рамные</a></li>
-									<li><a href="#">Пикапы</a></li>
-									<li><a href="#">Кроссоверы</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Раритетные</a></li>
-							<li><a href="#">Распродажа</a></li>
-							<li><a href="#">Новинки</a></li>
-					</ul>
-					</nav>
+				<?$APPLICATION->IncludeComponent(
+						"bitrix:menu", 
+						"catalog_top", 
+						array(
+								"ALLOW_MULTI_SELECT" => "N",
+								"CHILD_MENU_TYPE" => "sub_menu",
+								"COMPONENT_TEMPLATE" => "catalog_top",
+								"DELAY" => "N",
+								"MAX_LEVEL" => "2",
+								"MENU_CACHE_GET_VARS" => array(
+								),
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_TYPE" => "A",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"MENU_THEME" => "site",
+								"ROOT_MENU_TYPE" => "top",
+								"USE_EXT" => "Y"
+						),
+						false
+					);?>	
+							
 				</div>
 			</section>
 			<section class="content">
 				<div class="work_area width_960">
 					<?$APPLICATION->IncludeComponent(
-	"bitrix:breadcrumb",
-	"breadcrumbs_qsoft",
-	Array(
-		"COMPONENT_TEMPLATE" => "breadcrumbs_qsoft",
-		"PATH" => "",
-		"SITE_ID" => "s1",
-		"START_FROM" => "0"
-	)
-);?>
+							"bitrix:breadcrumb",
+							"breadcrumbs_qsoft",
+							Array(
+									"COMPONENT_TEMPLATE" => "breadcrumbs_qsoft",
+									"PATH" => "",
+									"SITE_ID" => "s1",
+									"START_FROM" => "0"
+							)
+						);?>
 					<section class="content_area">
 						<aside class="left_block">
 						<nav>
 							<ul class="left_menu">
 								<li>
-									<span>Информация</span>
+									<span><?=GetMessage('INFO')?></span>
 									<?$APPLICATION->IncludeComponent(
-									"bitrix:menu",
-									"menu_footer",
-									Array(
-										"ALLOW_MULTI_SELECT" => "N",
-										"CHILD_MENU_TYPE" => "left",
-										"COMPONENT_TEMPLATE" => "menu_footer",
-										"DELAY" => "N",
-										"MAX_LEVEL" => "1",
-										"MENU_CACHE_GET_VARS" => array(),
-										"MENU_CACHE_TIME" => "3600",
-										"MENU_CACHE_TYPE" => "Y",
-										"MENU_CACHE_USE_GROUPS" => "Y",
-										"ROOT_MENU_TYPE" => "bottom",
-										"USE_EXT" => "N"
-									)
+											"bitrix:menu",
+											"menu_footer",
+											Array(
+													"ALLOW_MULTI_SELECT" => "N",
+													"CHILD_MENU_TYPE" => "left",
+													"COMPONENT_TEMPLATE" => "menu_footer",
+													"DELAY" => "N",
+													"MAX_LEVEL" => "1",
+													"MENU_CACHE_GET_VARS" => array(),
+													"MENU_CACHE_TIME" => "3600",
+													"MENU_CACHE_TYPE" => "Y",
+													"MENU_CACHE_USE_GROUPS" => "Y",
+													"ROOT_MENU_TYPE" => "bottom",
+													"USE_EXT" => "N"
+										)
 								);?>
 								</li>
 							</ul>

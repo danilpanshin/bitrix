@@ -24,7 +24,7 @@
 							false
 						);?>
 						<section class="info_block left_block_shadow">
-							<h2>Информация</h2>
+							<h2><?=GetMessage('INFO')?></h2>
 							<nav class="grey">
 								<?$APPLICATION->IncludeComponent(
 									"bitrix:menu",
@@ -48,7 +48,20 @@
 					</section>
 			<div class="footer_inner">
 				<a href="http://www.qsoft.ru" target="_blank" class="qsoft grey inline-block">Сделано в</a>
-				<div class="copy">&copy; 2013 Рога &amp; Сила. Продажа автомобилей.</div>
+				
+					<div class="copy">
+						<?$APPLICATION->IncludeComponent(
+								"bitrix:main.include",
+								"",
+								Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => "",
+										"PATH" => "/include_areas/copyright.php"
+									)
+							);?>
+				</div>	
+
 			</div>
 		</footer>
 	</body>

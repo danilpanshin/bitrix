@@ -1,0 +1,25 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Рамные", 
+		"/catalog/suvs/frames/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Пикапы", 
+		"/catalog/suvs/pickups/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Кроссоверы", 
+		"/catalog/suvs/crossovers/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+);
+?>

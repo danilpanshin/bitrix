@@ -34,9 +34,8 @@ $MESS["CP_BNL_SET_META_KEYWORDS"] = "Устанавливать ключевые
 $MESS["CP_BNL_SET_META_DESCRIPTION"] = "Устанавливать описание страницы";
 $MESS["CP_BNL_SET_LAST_MODIFIED"] = "Устанавливать в заголовках ответа время модификации страницы";
 $MESS["CP_BNL_STRICT_SECTION_CHECK"] = "Строгая проверка раздела для показа списка";
-$MESS['ERROR_IB_NOT_FOUND'] = 'Не выбран ИБ';
-$MESS['ERROR_IB_MODULE_NOT_FOUND'] = 'Не подключен модуль ИБ';
-$MESS['T_IBLOCK_DESC_LIST_CONT'] = 'Количество новостей на странице';
-$MESS['DEFAULT_STORES_URL'] = 'Ссылка на НАШИ САЛОНЫ'; 
-$MESS['SORT_PARAM'] = 'Направление сортировки';
+$MESS['SORT_PARAM'] = 'RAND';
+$MESS['TYPE_SORT_PARAM'] = 'DESC';
+$MASS["PATH"] = "ссылка для всех салонов";
+$MESS["MAP"] = 'Показывать карту';
 ?>

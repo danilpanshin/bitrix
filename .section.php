@@ -1,8 +1,8 @@
 <?
 $sSectionName = "Главная";
 $arDirProperties = array(
-   "description" => "1С-Битрикс: Управление сайтом",
-   "keywords" => "1С-Битрикс, CMS, PHP, bitrix, система управления контентом",
+   "description" => "Рога и сила: продажа автомобилей",
+   "keywords" => "Рога, сила, автомобили, продажа автомобилей",
    "robots" => "index, follow"
 );
 ?>

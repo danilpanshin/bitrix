@@ -12,6 +12,8 @@ $db_iblock = CIBlock::GetList(array("SORT"=>"ASC"), array("SITE_ID"=>$_REQUEST["
 while($arRes = $db_iblock->Fetch())
 	$arIBlocks[$arRes["ID"]] = "[".$arRes["ID"]."] ".$arRes["NAME"];
 
+
+
 $arComponentParameters = array(
 	"GROUPS" => array(
 	),
@@ -25,16 +27,6 @@ $arComponentParameters = array(
 			"DEFAULT" => "news",
 			"REFRESH" => "Y",
 		),
-		"STORES_URL" => array(
-			"NAME" => GetMessage("DEFAULT_STORES_URL"),
-			"TYPE" => "STRING",
-			"DEFAULT" => "/company/stores/",
-		),
-		"SORT_PARAM" => array(
-			"NAME" => GetMessage("SORT_PARAM"),
-			"TYPE" => "STRING",
-			"DEFAULT" => "DESC",
-		),
 		"IBLOCK_ID" => array(
 			"PARENT" => "BASE",
 			"NAME" => GetMessage("T_IBLOCK_DESC_LIST_ID"),
@@ -46,10 +38,30 @@ $arComponentParameters = array(
 		),
 		"NEWS_COUNT" => array(
 			"PARENT" => "BASE",
-			"NAME" => GetMessage("T_IBLOCK_DESC_LIST_CONT"),// "Количество новостей на странице",
+			"NAME" => GetMessage("T_IBLOCK_DESC_LIST_CONT"),
 			"TYPE" => "STRING",
-			"DEFAULT" => "20",
+			"DEFAULT" => "2",
 		),
 		"CACHE_TIME"  =>  array("DEFAULT"=>3600),
+		"SORT_PARAM" => array(
+			"NAME" => GetMessage("SORT_PARAM"),
+			"TYPE" => "STRING",
+			"DEFAULT" => "RAND",
+		),
+		"TYPE_SORT_PARAM" => array(
+			"NAME" => GetMessage("TYPE_SORT_PARAM"),
+			"TYPE" => "STRING",
+			"DEFAULT" => "DESC",
+		),
+		'PATH' => array(
+			'NAME' => GetMessage('PATH'),
+			'TYPE' => 'STRING',
+			'DEFAULT' => '/company/stores/',
+		),
+		'MAP' => array(
+			"NAME" => GetMessage('MAP'),
+			"TYPE" => "CHECKBOX",
+			"DEFAULT" => "N",
+		),
 	),
 );

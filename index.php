@@ -1,39 +1,24 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "Демонстрационная версия продукта «1С-Битрикс: Управление сайтом»");
+$APPLICATION->SetPageProperty("title", "Рога и сила: продажа автомобилей");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 $APPLICATION->SetTitle("Main page");
-?><div class="slider">
-	<ul class="bxslider">
-		<li>
-		<div class="banner">
- <img src="/local/templates/.default/images/test_slider_1.png" alt="" title="">
-			<div class="banner_content">
-				<h1>Купи Роллс Ройс, получи Отчество к&nbsp;своему имени</h1>
-				<h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием истинности необходимость и&nbsp;общезначимость, для&nbsp;которых нет никакой опоры в&nbsp;объективном мире <a href="#1" class="detail_link">подробнее</a></h2>
-			</div>
-		</div>
- </li>
-		<li>
-		<div class="banner">
- <img src="/local/templates/.default/images/test_slider_2.png" alt="" title="">
-			<div class="banner_content">
-				<h1>Купи Астон Мартин, получи секретное Задание</h1>
-				<h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире <a href="#2" class="detail_link">подробнее</a></h2>
-			</div>
-		</div>
- </li>
-		<li>
-		<div class="banner">
- <img src="/local/templates/.default/images/test_slider_3.png" alt="" title="">
-			<div class="banner_content">
-				<h1>Купи Бентли, получи бейсболку</h1>
-				<h2>Аподейктика индуктивно подчеркивает катарсис, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых нет никакой опоры в объективном мире <a href="#3" class="detail_link">подробнее</a></h2>
-			</div>
-		</div>
- </li>
-	</ul>
-</div>
+?>
+
+<?$APPLICATION->IncludeComponent(
+	"qsoft:main.banner", 
+	".default", 
+	array(
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => ".default",
+		"NOINDEX" => "N",
+		"QUANTITY" => "3",
+		"TYPE" => "cars"
+	),
+	false
+);?>
+
 <h2 class="push_right">Модели недели</h2>
  <section class="product_line"> <figure class="product_item">
 <div class="product_item_pict">
@@ -75,37 +60,74 @@ $APPLICATION->SetTitle("Main page");
 <p class="product_item_price">
 	 3 532 000 руб.
 </p>
- <a class="buy_button inverse inline-block pie" href="#">В корзину</a> </figcaption> </figure> </section> <section class="news_block inverse">
-<h2 class="inline-block">Новости</h2>
- <span class="all_list">&nbsp;/&nbsp;<a href="#" class="text_decor_none"><b>Все</b></a></span>
+ <a class="buy_button inverse inline-block pie" href="#">В корзину</a> </figcaption> </figure> </section> 
+ <section class="news_block inverse">
+
 <div>
- <figure class="news_item"> <a href="#"><img src="/local/templates/.default/images/test_news_1.png" alt="" title=""></a> <figcaption class="news_item_description">
-	<h3><a href="#">Парадигма просветляет архетип</a></h3>
-	<div class="news_item_anons">
- <a href="#" class="text_decor_none">
-		Парадигма просветляет архетип, таким образом, стратегия поведения, выгодная отдельному человеку </a>
-	</div>
-	<div class="news_item_date grey">
-		 01 Янв 2013
-	</div>
- </figcaption> </figure> <figure class="news_item"> <a href="#"><img src="/local/templates/.default/images/test_news_2.png" alt="" title=""></a> <figcaption class="news_item_description">
-	<h3><a href="#">Парадигма просветляет архетип</a></h3>
-	<div class="news_item_anons">
- <a href="#" class="text_decor_none">
-		Парадигма просветляет архетип, таким образом, стратегия поведения, выгодная отдельному человеку </a>
-	</div>
-	<div class="news_item_date grey">
-		 01 Янв 2013
-	</div>
- </figcaption> </figure> <figure class="news_item"> <a href="#"><img src="/local/templates/.default/images/test_news_3.png" alt="" title=""></a> <figcaption class="news_item_description">
-	<h3><a href="#">Парадигма просветляет архетип</a></h3>
-	<div class="news_item_anons">
- <a href="#" class="text_decor_none">
-		Парадигма просветляет архетип, таким образом, стратегия поведения, выгодная отдельному человеку </a>
-	</div>
-	<div class="news_item_date grey">
-		 01 Янв 2013
-	</div>
- </figcaption> </figure>
+ <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"news_list_main", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "j M Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "news_list_main",
+		"DETAIL_URL" => "/company/news/#ELEMENT_CODE#/",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "12",
+		"IBLOCK_TYPE" => "news",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "3",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "150",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "Y",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_ADDITIONAL" => ""
+	),
+	false
+);?>
 </div>
  </section><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

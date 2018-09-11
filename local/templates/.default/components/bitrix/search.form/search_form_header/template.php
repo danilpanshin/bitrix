@@ -14,7 +14,7 @@ $this->setFrameMode(true);?>
 
 <div class="search_form_wrapper">
   <form name="search_form" class="search_form pie" action="<?=$arResult["FORM_ACTION"]?>">
-	  <input type="text" name="q" placeholder="Поиск по сайту"/>		
+	  <input type="text" name="q" placeholder="<?=GetMessage('PLACEHOLDER')?>"/>		
 		<input name="s" type="submit" value=""/>	
   </form>
 </div>

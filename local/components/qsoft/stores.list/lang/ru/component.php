@@ -1,7 +1,6 @@
-<?php
-
-$MESS['ERROR_IB_NOT_FOUND'] = 'Не выбран ИБ';
-$MESS['ERROR_IB_MODULE_NOT_FOUND'] = 'Не подключен модуль ИБ';
-$MESS['T_IBLOCK_DESC_LIST_CONT'] = 'Количество новостей на странице';
-$MESS['DEFAULT_STORES_URL'] = 'Ссылка на НАШИ САЛОНЫ';
-$MESS['SORT_PARAM'] = 'Направление сортировки';
+<?
+$MESS['T_NEWS_NEWS_NA'] = "Раздел не найден.";
+$MESS['IBLOCK_MODULE_NOT_INSTALLED'] = "Модуль Информационных блоков не установлен";
+$MESS['NO_IB'] = 'не выбран ИБ';
+$MESS['NO_MODUL_IB'] = 'подключен модуль ИБ';
+?>

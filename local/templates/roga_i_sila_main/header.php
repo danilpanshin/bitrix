@@ -48,18 +48,19 @@ Asset::getInstance()->addJs(SCRIPTS_AND_STYLES_PATH . "/js/jquery.ui.selectmenu/
 					</div>
 	
 					<?$APPLICATION->IncludeComponent(
-						"bitrix:system.auth.form",
-						"auth_form_header",
-						Array(
-							"COMPONENT_TEMPLATE" => "auth_form_header",
-							"FORGOT_PASSWORD_URL" => "",
-							"PROFILE_URL" => "/personal/profile",
-							"REGISTER_URL" => "/auth/",
-							"SHOW_ERRORS" => "Y",
-							"AUTH_INDEX" => "/auth/",
-							"PERSONAL" => "/personal/",
-							"LOGOUT" => "/?logout=yes",
-						)
+							"bitrix:system.auth.form",
+							"auth_form_header",
+							Array(
+								"COMPONENT_TEMPLATE" => "auth_form_header",
+								"FORGOT_PASSWORD_URL" => "",
+								"PROFILE_URL" => "/personal/profile",
+								"REGISTER_URL" => "/auth/",
+								"SHOW_ERRORS" => "Y",
+								"AUTH_INDEX" => "/auth/",
+								"PERSONAL" => "/personal/",
+								"LOGOUT" => $APPLICATION->GetCurPage() . "?logout=yes",
+								'AUTH_REGISTER' => '/auth/?register=yes',
+							)
 					);?>
 					
 					<div class="basket_block inline-block">
@@ -83,32 +84,27 @@ Asset::getInstance()->addJs(SCRIPTS_AND_STYLES_PATH . "/js/jquery.ui.selectmenu/
 						false
 					);?>
 			        
-			        <nav class="main_menu">
-			            <ul>
-			                <li class="submenu pie">
-			                    <span>Легковые</span>
-			                    <div class="submenu_border"></div>
-			                    <ul>
-			                        <li><a href="#">Седаны</a></li>
-			                        <li><a href="#">Хетчбеки</a></li>
-			                        <li><a href="#">Универсалы</a></li>
-			                        <li><a href="#">Купе</a></li>
-			                        <li><a href="#">Родстеры</a></li>
-			                    </ul>
-			                <li class="submenu pie">
-			                    <span>Внедорожники</span>
-			                    <div class="submenu_border"></div>
-			                    <ul>
-			                        <li><a href="#">Рамные</a></li>
-			                        <li><a href="#">Пикапы</a></li>
-			                        <li><a href="#">Кроссоверы</a></li>
-			                    </ul>
-			                </li>
-			                <li><a href="#">Раритетные</a></li>
-			                <li><a href="#">Распродажа</a></li>
-			                <li><a href="#">Новинки</a></li>
-			        </ul>
-			        </nav>
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:menu", 
+						"catalog_top", 
+						array(
+								"ALLOW_MULTI_SELECT" => "N",
+								"CHILD_MENU_TYPE" => "sub_menu",
+								"COMPONENT_TEMPLATE" => "catalog_top",
+								"DELAY" => "N",
+								"MAX_LEVEL" => "2",
+								"MENU_CACHE_GET_VARS" => array(
+								),
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_TYPE" => "A",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"MENU_THEME" => "site",
+								"ROOT_MENU_TYPE" => "top",
+								"USE_EXT" => "Y"
+						),
+						false
+					);?>
+					
 			    </div>
 			</section>
 			<section class="content">

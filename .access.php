@@ -1,4 +1,6 @@
 <?
+$PERM["desktop_app"]["*"]="D";
+$PERM["admin"]["1"]="X";
 $PERM["/"]["7"]="X";
 $PERM["/"]["*"]="R";
 $PERM["pub"]["5"]="T_8";

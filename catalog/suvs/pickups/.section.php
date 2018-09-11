@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Пикапы";
+$arDirProperties = Array(
+
+);
+?>

@@ -11,7 +11,7 @@
           ?>
           
 						<figure class="shops_block_item" id="<?=$this->GetEditAreaId($item['ID']);?>">
-							<a href=""><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="" title="" /></a>
+							<a href="<?=$arParams["STORES_URL"]?>"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="" title="" /></a>
 							<figcaption class="shops_block_item_description">
 								<h3 class="shops_block_item_name"><?=$item['NAME']?></h3>
 								<p class="dark_grey"><?=$item['PROPERTY_ADDRESS_VALUE']?></p>

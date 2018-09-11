@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Седаны",
+		"/catalog/cars/sedans/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Хетчбеки",
+		"/catalog/cars/hatchbacks/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Универсалы",
+		"/catalog/cars/wagons/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Купе",
+		"/catalog/cars/coupes/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Родстеры",
+		"/catalog/cars/roadsters/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+);
+?>

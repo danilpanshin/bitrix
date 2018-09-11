@@ -6,7 +6,7 @@ CJSCore::Init();
 <?if($arResult["FORM_TYPE"] == "login"):?>
 
 <nav class="top_menu grey inline-block">
-        <a href="<?=$arResult["AUTH_REGISTER_URL"]?>" class="register"><?=GetMessage("AUTH_REGISTER")?></a>
+        <a href="<?=$arParams["AUTH_REGISTER"]?>" class="register"><?=GetMessage("AUTH_REGISTER")?></a>
         <a href="<?=$arParams["AUTH_INDEX"]?>?backurl=<?=$arResult['BACKURL']?>" class="auth"><?=GetMessage("auth_form_comp_auth")?></a>
 </nav>
 
